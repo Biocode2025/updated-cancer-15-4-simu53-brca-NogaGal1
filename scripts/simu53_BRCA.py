@@ -7,3 +7,17 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = os.path.normpath(os.path.join(script_dir, '..', 'data'))
 results_dir = os.path.normpath(os.path.join(script_dir, '..', 'results'))
 
+#### functions ####
+
+def Mutate_DNA(seq):
+    if len(seq) == 0:
+        return seq
+    nuc_list = ["A", "T", "G", "C"]
+    seq = seq.upper()
+
+    rand_index = random.randrange(len(seq))
+    rand_nuc = seq[rand_index]
+    nuc_list.remove(rand_nuc)
+    new_nuc = random.choice(nuc_list)
+
+    return seq[:rand_index] + new_nuc + seq[rand_index + 1:]

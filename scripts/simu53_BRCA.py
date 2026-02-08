@@ -21,3 +21,14 @@ def Mutate_DNA(seq):
     new_nuc = random.choice(nuc_list)
 
     return seq[:rand_index] + new_nuc + seq[rand_index + 1:]
+
+
+def Insert_DNA(seq):
+    if len(seq) == 0:
+        return seq
+    nuc_list = ["A", "T", "G", "C"]
+    seq = seq.upper()
+
+    rand_index = random.randrange(len(seq) + 1)
+    new_nucs = random.choice(nuc_list) + random.choice(nuc_list)
+    return seq[:rand_index] + new_nucs + seq[rand_index:]

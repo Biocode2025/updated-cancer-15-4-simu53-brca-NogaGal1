@@ -56,3 +56,6 @@ def Read_dict():
             parts = line.strip().split()
             if len(parts) >= 2:
                 RNA_codon_table[parts[0]] = parts[1]
+
+def DNA_RNA_Cod(dna_seq):
+    return dna_seq.upper().replace("T", "U")

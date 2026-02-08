@@ -59,3 +59,12 @@ def Read_dict():
 
 def DNA_RNA_Cod(dna_seq):
     return dna_seq.upper().replace("T", "U")
+
+def RNA_prot(rna_seq):
+    protein = ""
+    for i in range(0, len(rna_seq) - 2, 3):
+        codon = rna_seq[i:i+3]
+        if codon not in RNA_codon_table:
+            break
+        protein += RNA_codon_table[codon]
+    return protein

@@ -32,3 +32,12 @@ def Insert_DNA(seq):
     rand_index = random.randrange(len(seq) + 1)
     new_nucs = random.choice(nuc_list) + random.choice(nuc_list)
     return seq[:rand_index] + new_nucs + seq[rand_index:]
+
+def Delete_DNA(seq):
+    if len(seq) == 0:
+        return seq
+    seq = seq.upper()
+
+    k = random.randint(1, 3)
+    rand_index = random.randrange(len(seq))
+    return seq[:rand_index] + seq[rand_index + k:]

@@ -48,3 +48,11 @@ def Comp_seq(a, b):
         if x != y:
             count += 1
     return count
+
+def Read_dict():
+    global RNA_codon_table
+    with open(os.path.join(data_dir, "codon_AA.txt")) as f:
+        for line in f:
+            parts = line.strip().split()
+            if len(parts) >= 2:
+                RNA_codon_table[parts[0]] = parts[1]

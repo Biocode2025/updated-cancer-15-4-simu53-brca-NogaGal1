@@ -41,3 +41,10 @@ def Delete_DNA(seq):
     k = random.randint(1, 3)
     rand_index = random.randrange(len(seq))
     return seq[:rand_index] + seq[rand_index + k:]
+
+def Comp_seq(a, b):
+    count = abs(len(a) - len(b))
+    for x, y in zip(a, b):
+        if x != y:
+            count += 1
+    return count
